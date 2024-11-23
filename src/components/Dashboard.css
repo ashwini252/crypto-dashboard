@@ -1,0 +1,274 @@
+/* Container styles */
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 20px;
+    position: relative;
+}
+
+/* Crypto Dashboard Heading */
+.dashboard-heading {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333; 
+    font-weight: bold;
+}
+
+/* Light Mode - Heading */
+.dashboard-heading.light {
+    color: black;
+}
+
+/* Dark Mode - Heading */
+.dashboard-heading.dark {
+    color: white;
+}
+
+/* Search bar wrapper */
+.search-bar-wrapper {
+    position: relative;
+    width: 80%;
+    margin: 0 auto 20px;
+}
+
+/* Search bar styling */
+.search-bar {
+    padding: 10px 40px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+    padding-left: 35px; 
+}
+
+/* Light Mode - Placeholder Text */
+.search-bar::placeholder {
+    color: #666; 
+}
+
+/* Dark Mode - Placeholder Text */
+.search-bar.dark::placeholder {
+    color: white; 
+}
+
+/* Dark Mode - Search Bar Styling */
+.search-bar.dark {
+    background-color: #444;
+    border-color: white;
+    color: white;
+}
+
+/* Magnifying glass icon */
+.search-icon {
+    position: absolute;
+    top: 50%;
+    left: 10px; 
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    color: #666;
+    pointer-events: none; /* Prevent interactions with the icon */
+}
+
+/* Dark Mode - Search Icon */
+.search-icon.dark {
+    color: white; /* Icon color for dark mode */
+}
+
+/* Grid Layout for Coins */
+.coins-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Default: 4 coins per row */
+    gap: 20px;
+    margin-top: 20px;
+    padding: 0 20px;
+}
+
+/* Responsive adjustments for different screen sizes */
+@media (max-width: 1200px) {
+    .coins-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 coins per row */
+    }
+}
+
+@media (max-width: 900px) {
+    .coins-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 coins per row */
+    }
+}
+
+@media (max-width: 600px) {
+    .coins-grid {
+        grid-template-columns: repeat(2, 1fr); /*  2 coins per row */
+        gap: 10px; 
+    }
+}
+
+/* Styling each coin card */
+.coin-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+    text-decoration: none;
+    color: #333;
+}
+
+/* Hover effect for coin cards */
+.coin-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Coin Card Header */
+.coin-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #4CAF50; /* Green */
+}
+
+/* Coin Card Content */
+.coin-card p {
+    font-size: 1rem;
+    margin: 5px 0;
+    color: #333;
+}
+
+/* Pagination Controls */
+.pagination-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding: 0 20px;
+}
+
+.pagination-controls button {
+    padding: 10px;
+    cursor: pointer;
+}
+
+/* Filter dropdown */
+.filters select {
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    margin-left: 10%;
+}
+
+/* Dark Mode styles */
+.container.dark {
+    background-color: #2c2c2c;
+    color: white;
+}
+
+.coin-card.dark {
+    background-color: #333;
+    border: 1px solid #444;
+    color: white;
+}
+
+.coin-card.dark h3 {
+    color: goldenrod; 
+}
+
+/* Dark Mode - Coin Details (Price, 24h Change, Market Cap) */
+.coin-card.dark .coin-price,
+.coin-card.dark .coin-change,
+.coin-card.dark .coin-market-cap {
+    color: white; 
+}
+
+/* Dark Mode - Coin Price, Change, Market Cap */
+.coin-card.dark .coin-price,
+.coin-card.dark .coin-change,
+.coin-card.dark .coin-market-cap {
+    color: white; 
+}
+
+/* Dark mode pagination button styles */
+.pagination-controls button.dark {
+    background-color: #444;
+    color: white;
+    border: 1px solid #555;
+}
+
+/* Dark mode filter dropdown */
+.filters select.dark {
+    background-color: #444;
+    color: white;
+    border-color: #555;
+}
+
+/* Theme Toggle Wrapper */
+.theme-toggle-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Theme Toggle Styles */
+.theme-toggle {
+    position: relative;
+    width: 50px;
+    height: 25px;
+    background-color: #ccc; 
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 78%;
+}
+
+/* Hide the Checkbox */
+.theme-toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    position: absolute;
+}
+
+/* Slider Button */
+.theme-toggle-slider {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 19px;
+    height: 19px;
+    background-color: darkblue;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+    z-index: 2;
+}
+
+/* Move Slider on Toggle (when input is checked) */
+.theme-toggle input:checked + .theme-toggle-slider {
+    transform: translateX(25px);
+}
+
+/* Background Color when Checked (Dark Mode) */
+.theme-toggle input:checked ~ .theme-toggle {
+    background-color: #4caf50; 
+}
+
+/* Responsiveness: Adjust grid on smaller screens */
+@media (max-width: 1200px) {
+    .coins-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .coins-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .coins-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 coins per row on mobile */
+        gap: 10px; 
+    }
+}

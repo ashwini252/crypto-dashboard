@@ -1,0 +1,175 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Dark Mode Styles */
+.dark-mode {
+    background-color: #121212;  /* Dark background for the entire page */
+    color: white;               /* White text in dark mode */
+}
+
+/* Apply dark mode to all elements inside the container */
+.dark-mode .container {
+    background-color: #1e1e1e;  /* Darker container background for dark mode */
+}
+
+/* Apply dark mode to other elements like buttons and inputs */
+.dark-mode .mode-text {
+    color: #fff;
+}
+
+.dark-mode .search-bar,
+.dark-mode .refresh-button {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Dark mode switch input styles */
+.dark-mode .switch input:checked + .slider {
+    background-color: #4caf50;
+}
+
+.dark-mode .chart-container {
+    background-color: #1e1e1e;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+/* Button and input fields */
+.search-bar,
+.refresh-button {
+    padding: 8px 12px;
+    font-size: 14px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.search-bar {
+    width: 100%;
+    max-width: 150px;
+    margin-right: 10px;
+}
+
+.refresh-button {
+    background-color: #007bff;
+    color: white;
+}
+
+.refresh-button:hover {
+    background-color: #0056b3;
+}
+
+/* Switch styles */
+.toggle-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 34px;
+    height: 20px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 50px;
+}
+
+.slider.round {
+    border-radius: 50px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 12px;
+    width: 12px;
+    border-radius: 50px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+}
+
+input:checked + .slider:before {
+    transform: translateX(14px);
+}
+
+.switch input:checked + .slider {
+    background-color: #4caf50;
+}
+
+/* Mobile-responsive styles */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    .toggle-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .search-bar {
+        width: 100%;
+    }
+
+    .chart-container {
+        width: 100%;
+    }
+}
+
+/* Chart container */
+.chart-container {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.chart-container canvas {
+    width: 100% !important;
+    height: 400px !important;
+    max-width: 100%;
+}
+
+/* Ensuring that dark mode applies to both pages (main and 2nd page) */
+.page {
+    width: 100%;
+    height: 100%;
+    transition: background-color 0.3s ease;
+}
+
+
+.dark-mode .page {
+    background-color: #121212; /* Dark background for all pages when dark mode is enabled */
+    color: white; /* Light text color for readability */
+}

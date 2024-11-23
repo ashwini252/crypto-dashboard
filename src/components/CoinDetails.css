@@ -1,0 +1,158 @@
+
+/* Container styles */
+.coin-detail-container {
+    padding: 20px;
+    max-width: 97%;
+    margin: 0 auto;
+    background-color: #f4f4f4;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark Mode styles for CoinDetail */
+.coin-detail-container.dark-mode {
+    background-color: #121212;
+    color: white;
+}
+
+/* Dark Mode specific styles for CoinDetail */
+.coin-detail-container.dark-mode .mode-text {
+    color: #fff;
+}
+
+.coin-detail-container.dark-mode .search-bar,
+.coin-detail-container.dark-mode .refresh-button {
+    background-color: #333;
+    color: #fff;
+}
+
+.coin-detail-container.dark-mode .refresh-button {
+    background-color: white;
+    color: blue;
+    border: 2px solid #4caf50;
+}
+
+.coin-detail-container.dark-mode .chart-container {
+    background-color: #1e1e1e;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+/* Chart labels in dark mode */
+.coin-detail-container.dark-mode .chart-container canvas {
+    filter: brightness(0.8); 
+}
+
+/* Add styles for chart X and Y axis labels */
+.coin-detail-container.dark-mode .chart-container canvas,
+.coin-detail-container.dark-mode .chart-container canvas .chartjs-tooltip {
+    color: white !important; 
+}
+
+.coin-detail-container.dark-mode .chart-container canvas .chartjs-legend,
+.coin-detail-container.dark-mode .chart-container canvas .chartjs-axis-x,
+.coin-detail-container.dark-mode .chart-container canvas .chartjs-axis-y {
+    color: white !important;
+}
+
+/* Switch styles */
+.toggle-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 34px;
+    height: 20px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 50px;
+}
+
+.slider.round {
+    border-radius: 50px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 12px;
+    width: 12px;
+    border-radius: 50px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+}
+
+input:checked + .slider:before {
+    transform: translateX(14px);
+}
+
+.switch input:checked + .slider {
+    background-color: #4caf50;
+}
+
+/* Button and input fields */
+.refresh-button {
+    background-color: #007bff;
+    color: white;
+    border: 2px solid transparent; 
+    transition: border 0.3s ease;
+}
+
+.refresh-button:hover {
+    background-color: #0056b3;
+}
+
+/* Mobile-responsive styles */
+@media screen and (max-width: 768px) {
+    .coin-detail-container {
+        padding: 10px;
+    }
+
+    .toggle-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .search-bar {
+        width: 100%;
+    }
+
+    .chart-container {
+        width: 100%;
+    }
+}
+
+/* Chart container */
+.chart-container {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.chart-container canvas {
+    width: 100% !important;
+    height: 400px !important;
+    max-width: 100%;
+}
